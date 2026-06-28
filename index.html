@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A New Chapter | Early Access</title>
+    <title>Creator & Sponsor Network | Early Access</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -145,7 +145,7 @@
         color: var(--text-muted);
         font-size: 1.02rem;
         line-height: 1.65;
-        max-width: 460px;
+        max-width: 540px;
         margin: 0 auto 44px;
       }
 
@@ -373,11 +373,11 @@
         <span class="core">N°2</span>
       </div>
 
-      <p class="eyebrow">A New Chapter</p>
-      <h1>Something <em>bigger</em><br />is on its way</h1>
+      <p class="eyebrow">Phase 1 Allocations</p>
+      <h1>Looking for a sponsor <em>or want to sponsor?</em></h1>
+      
       <p class="tagline">
-        We're refreshing our brand from the ground up. Pick a way to hear
-        about it first — <strong>email, WhatsApp, or both.</strong>
+        We are building the ultimate network to connect up-and-coming creators with premium brands, free gear, and powerful monetization tools. Slots are limited for our Phase 1 launch—secure your spot and enter our launch giveaway below.
       </p>
 
       <div class="paths">
@@ -392,24 +392,24 @@
               />
             </svg>
           </div>
-          <h2>Get the announcement by email</h2>
+          <h2>Join the Ecosystem</h2>
           <p class="desc">
-            One message when we relaunch — no extra noise in between.
+            Submit your channel or brand details to unlock match-making infrastructure and exclusive campaign deals.
           </p>
 
           <form id="signup-form">
             <div class="field">
-              <label for="name-field">Full name</label>
+              <label for="name-field">Channel or Brand Name</label>
               <input
                 type="text"
                 id="name-field"
                 name="name"
-                placeholder="Your name"
+                placeholder="e.g., Your Channel or Company"
                 required
               />
             </div>
             <div class="field">
-              <label for="email-field">Email address</label>
+              <label for="email-field">Business Email</label>
               <input
                 type="email"
                 id="email-field"
@@ -419,7 +419,7 @@
               />
             </div>
             <button type="submit" class="btn btn-gold" id="submit-btn">
-              Notify me
+              Get On the List
             </button>
             <p class="status" id="form-status" role="status"></p>
           </form>
@@ -436,10 +436,9 @@
               />
             </svg>
           </div>
-          <h2>Join the community chat</h2>
+          <h2>Priority Access Chat</h2>
           <p class="desc">
-            Talk to the team directly and see updates as soon as they're
-            posted.
+            Connect directly with network managers, sync up on immediate channel openings, and claim live gear drops.
           </p>
           <a
             href="#"
@@ -453,29 +452,27 @@
                 d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.966 0c3.178.001 6.169 1.24 8.413 3.488 2.245 2.248 3.481 5.239 3.482 8.415-.004 6.617-5.34 11.965-11.909 11.965-1.996-.001-3.963-.503-5.714-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.742.002-2.602-1.01-5.05-2.852-6.894C16.643 2.125 14.197.923 11.962.923c-5.44 0-9.866 4.373-9.87 9.746-.001 1.696.447 3.354 1.298 4.814L2.4 21.01l4.247-1.856zM17.48 15.63c-.31-.155-1.836-.906-2.119-1.01-.283-.103-.49-.155-.696.155-.205.31-.796.101-.975 1.213-.18.207-.36.24-.67.084-.31-.156-1.31-.483-2.496-1.542-.924-.824-1.547-1.842-1.728-2.152-.18-.31-.02-.477.136-.632.14-.139.31-.361.464-.543.155-.18.206-.31.31-.516.103-.207.052-.387-.026-.543-.077-.155-.696-1.677-.953-2.3-.25-.6-.505-.519-.695-.529-.18-.008-.387-.01-.593-.01-.207 0-.542.078-.826.388-.283.31-1.082 1.059-1.082 2.585 0 1.525 1.11 3 1.26 3.207.155.207 2.184 3.334 5.292 4.673.74.32 1.317.51 1.768.653.744.237 1.422.203 1.958.123.597-.089 1.836-.75 2.094-1.446.257-.696.257-1.293.18-1.419-.077-.127-.283-.207-.592-.361z"
               />
             </svg>
-            Open WhatsApp
+            Connect via WhatsApp
           </a>
         </div>
       </div>
 
       <p class="footnote">
-        You're welcome to use either path, or both — there's no extra
-        benefit to doing both beyond hearing from us twice. Unsubscribe from
-        emails anytime.
+        Entering either portal registers your credentials into the deployment distribution queue. Opt-out anytime.
       </p>
     </div>
 
     <script>
-      // ---------- WhatsApp link: built safely, easy to update in one place ----------
-      const WHATSAPP_NUMBER = "447482795285"; // digits only, country code, no + or leading 0
-      const WHATSAPP_MESSAGE = "Hi, I'd like to join the community";
+      // ---------- WhatsApp link setup ----------
+      const WHATSAPP_NUMBER = "447482795285"; 
+      const WHATSAPP_MESSAGE = "Hello, I'd like to join the network placement queue for sponsor opportunities.";
       document.getElementById("wa-link").href =
         "https://wa.me/" +
         WHATSAPP_NUMBER +
         "?text=" +
         encodeURIComponent(WHATSAPP_MESSAGE);
 
-      // ---------- Email form: AJAX submit to Formspree, no page redirect ----------
+      // ---------- Email form setup ----------
       const form = document.getElementById("signup-form");
       const statusEl = document.getElementById("form-status");
       const submitBtn = document.getElementById("submit-btn");
@@ -484,7 +481,7 @@
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
         submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
+        submitBtn.textContent = "Processing Entry...";
         statusEl.textContent = "";
         statusEl.className = "status";
 
@@ -496,10 +493,10 @@
           });
 
           if (res.ok) {
-            statusEl.textContent = "You're on the list — talk soon.";
+            statusEl.textContent = "Entry received! Check your inbox shortly.";
             statusEl.className = "status ok";
             form.reset();
-            submitBtn.textContent = "Notify me";
+            submitBtn.textContent = "Get On the List";
           } else {
             throw new Error("Request failed");
           }
@@ -507,7 +504,7 @@
           statusEl.textContent =
             "Something went wrong. Please try again in a moment.";
           statusEl.className = "status err";
-          submitBtn.textContent = "Notify me";
+          submitBtn.textContent = "Get On the List";
         } finally {
           submitBtn.disabled = false;
         }
@@ -515,3 +512,5 @@
     </script>
   </body>
 </html>
+
+```
