@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A New Chapter | Early Access</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0a0e1a;
+        --surface: #121828;
+        --surface-2: #1a2233;
+        --border: #2a3247;
+        --text: #f3f1ea;
+        --text-muted: #9aa3b8;
+        --gold: #d9b878;
+        --gold-soft: rgba(217, 184, 120, 0.14);
+        --gold-line: rgba(217, 184, 120, 0.35);
+        --green: #25d366;
+        --green-dark: #1aa651;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        background: radial-gradient(
+            ellipse 80% 60% at 50% -10%,
+            rgba(217, 184, 120, 0.1),
+            transparent 60%
+          ),
+          var(--ink);
+        color: var(--text);
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 56px 20px 40px;
+      }
+
+      .wrap {
+        width: 100%;
+        max-width: 640px;
+      }
+
+      /* ---------- Signature mark: seal + rotating ring ---------- */
+      .mark {
+        width: 76px;
+        height: 76px;
+        margin: 0 auto 28px;
+        position: relative;
+        display: grid;
+        place-items: center;
+      }
+
+      .mark svg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .mark .ring {
+        animation: spin 22s linear infinite;
+        transform-origin: 50% 50%;
+      }
+
+      .mark .core {
+        font-family: "Fraunces", serif;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--gold);
+        letter-spacing: 0.04em;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .eyebrow {
+        text-align: center;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        text-align: center;
+        font-size: clamp(2.1rem, 6vw, 3.2rem);
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+        margin-bottom: 18px;
+      }
+
+      h1 em {
+        font-style: italic;
+        font-weight: 500;
+        background: linear-gradient(
+          100deg,
+          var(--text) 30%,
+          var(--gold) 45%,
+          #f3e3bf 50%,
+          var(--gold) 55%,
+          var(--text) 70%
+        );
+        background-size: 250% 100%;
+        background-position: 0% 0%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: shimmer 5s ease-in-out 0.4s 1;
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: 120% 0%;
+        }
+        100% {
+          background-position: -20% 0%;
+        }
+      }
+
+      .tagline {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 1.02rem;
+        line-height: 1.65;
+        max-width: 460px;
+        margin: 0 auto 44px;
+      }
+
+      .tagline strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      /* ---------- Path cards ---------- */
+      .paths {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      @media (max-width: 600px) {
+        .paths {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        margin-bottom: 16px;
+      }
+
+      .card-icon svg {
+        width: 19px;
+        height: 19px;
+      }
+
+      .card--email .card-icon {
+        background: var(--gold-soft);
+        color: var(--gold);
+      }
+
+      .card--wa .card-icon {
+        background: rgba(37, 211, 102, 0.14);
+        color: var(--green);
+      }
+
+      .card h2 {
+        font-family: "Fraunces", serif;
+        font-size: 1.18rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .card p.desc {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+        line-height: 1.55;
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
+
+      .field {
+        margin-bottom: 12px;
+      }
+
+      .field label {
+        display: block;
+        font-size: 0.74rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-bottom: 6px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .field input {
+        width: 100%;
+        padding: 12px 13px;
+        background: rgba(10, 14, 26, 0.6);
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        color: var(--text);
+        font-size: 0.92rem;
+        font-family: inherit;
+        transition: border-color 0.15s, box-shadow 0.15s;
+      }
+
+      .field input:focus-visible {
+        outline: none;
+        border-color: var(--gold);
+        box-shadow: 0 0 0 3px var(--gold-soft);
+      }
+
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 13px;
+        border: none;
+        border-radius: 9px;
+        font-size: 0.92rem;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        transition: transform 0.15s, filter 0.15s;
+        margin-top: 4px;
+      }
+
+      .btn:hover {
+        filter: brightness(1.08);
+        transform: translateY(-1px);
+      }
+
+      .btn:active {
+        transform: translateY(0);
+      }
+
+      .btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .btn-gold {
+        background: var(--gold);
+        color: #1a1305;
+      }
+
+      .btn-wa {
+        background: var(--green);
+        color: #06210f;
+      }
+
+      .btn-wa svg {
+        width: 17px;
+        height: 17px;
+        fill: currentColor;
+      }
+
+      .status {
+        font-size: 0.8rem;
+        margin-top: 10px;
+        min-height: 1.1em;
+        text-align: center;
+      }
+
+      .status.ok {
+        color: var(--green);
+      }
+
+      .status.err {
+        color: #f87171;
+      }
+
+      .or-divider {
+        display: none;
+      }
+
+      @media (max-width: 600px) {
+        .or-divider {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          color: var(--text-muted);
+          font-size: 0.72rem;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          margin: -6px 0 4px;
+        }
+        .or-divider::before,
+        .or-divider::after {
+          content: "";
+          flex: 1;
+          height: 1px;
+          background: var(--border);
+        }
+      }
+
+      .footnote {
+        text-align: center;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+        max-width: 440px;
+        margin: 8px auto 0;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .mark .ring,
+        h1 em {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <div class="mark">
+        <svg class="ring" viewBox="0 0 76 76" fill="none">
+          <circle
+            cx="38"
+            cy="38"
+            r="35"
+            stroke="var(--gold-line)"
+            stroke-width="1"
+            stroke-dasharray="3 7"
+          />
+        </svg>
+        <svg viewBox="0 0 76 76" fill="none">
+          <circle cx="38" cy="38" r="27" stroke="var(--border)" stroke-width="1" />
+        </svg>
+        <span class="core">N°2</span>
+      </div>
+
+      <p class="eyebrow">A New Chapter</p>
+      <h1>Something <em>bigger</em><br />is on its way</h1>
+      <p class="tagline">
+        We're refreshing our brand from the ground up. Pick a way to hear
+        about it first — <strong>email, WhatsApp, or both.</strong>
+      </p>
+
+      <div class="paths">
+        <!-- Email path -->
+        <div class="card card--email">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M4 4h16v16H4V4zm0 0l8 8 8-8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <h2>Get the announcement by email</h2>
+          <p class="desc">
+            One message when we relaunch — no extra noise in between.
+          </p>
+
+          <form id="signup-form">
+            <div class="field">
+              <label for="name-field">Full name</label>
+              <input
+                type="text"
+                id="name-field"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="email-field">Email address</label>
+              <input
+                type="email"
+                id="email-field"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-gold" id="submit-btn">
+              Notify me
+            </button>
+            <p class="status" id="form-status" role="status"></p>
+          </form>
+        </div>
+
+        <div class="or-divider">or</div>
+
+        <!-- WhatsApp path -->
+        <div class="card card--wa">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.966 0c3.178.001 6.169 1.24 8.413 3.488 2.245 2.248 3.481 5.239 3.482 8.415-.004 6.617-5.34 11.965-11.909 11.965-1.996-.001-3.963-.503-5.714-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.742.002-2.602-1.01-5.05-2.852-6.894C16.643 2.125 14.197.923 11.962.923c-5.44 0-9.866 4.373-9.87 9.746-.001 1.696.447 3.354 1.298 4.814L2.4 21.01l4.247-1.856zM17.48 15.63c-.31-.155-1.836-.906-2.119-1.01-.283-.103-.49-.155-.696.155-.205.31-.796.101-.975 1.213-.18.207-.36.24-.67.084-.31-.156-1.31-.483-2.496-1.542-.924-.824-1.547-1.842-1.728-2.152-.18-.31-.02-.477.136-.632.14-.139.31-.361.464-.543.155-.18.206-.31.31-.516.103-.207.052-.387-.026-.543-.077-.155-.696-1.677-.953-2.3-.25-.6-.505-.519-.695-.529-.18-.008-.387-.01-.593-.01-.207 0-.542.078-.826.388-.283.31-1.082 1.059-1.082 2.585 0 1.525 1.11 3 1.26 3.207.155.207 2.184 3.334 5.292 4.673.74.32 1.317.51 1.768.653.744.237 1.422.203 1.958.123.597-.089 1.836-.75 2.094-1.446.257-.696.257-1.293.18-1.419-.077-.127-.283-.207-.592-.361z"
+              />
+            </svg>
+          </div>
+          <h2>Join the community chat</h2>
+          <p class="desc">
+            Talk to the team directly and see updates as soon as they're
+            posted.
+          </p>
+          <a
+            href="#"
+            id="wa-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-wa"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.966 0c3.178.001 6.169 1.24 8.413 3.488 2.245 2.248 3.481 5.239 3.482 8.415-.004 6.617-5.34 11.965-11.909 11.965-1.996-.001-3.963-.503-5.714-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.742.002-2.602-1.01-5.05-2.852-6.894C16.643 2.125 14.197.923 11.962.923c-5.44 0-9.866 4.373-9.87 9.746-.001 1.696.447 3.354 1.298 4.814L2.4 21.01l4.247-1.856zM17.48 15.63c-.31-.155-1.836-.906-2.119-1.01-.283-.103-.49-.155-.696.155-.205.31-.796.101-.975 1.213-.18.207-.36.24-.67.084-.31-.156-1.31-.483-2.496-1.542-.924-.824-1.547-1.842-1.728-2.152-.18-.31-.02-.477.136-.632.14-.139.31-.361.464-.543.155-.18.206-.31.31-.516.103-.207.052-.387-.026-.543-.077-.155-.696-1.677-.953-2.3-.25-.6-.505-.519-.695-.529-.18-.008-.387-.01-.593-.01-.207 0-.542.078-.826.388-.283.31-1.082 1.059-1.082 2.585 0 1.525 1.11 3 1.26 3.207.155.207 2.184 3.334 5.292 4.673.74.32 1.317.51 1.768.653.744.237 1.422.203 1.958.123.597-.089 1.836-.75 2.094-1.446.257-.696.257-1.293.18-1.419-.077-.127-.283-.207-.592-.361z"
+              />
+            </svg>
+            Open WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <p class="footnote">
+        You're welcome to use either path, or both — there's no extra
+        benefit to doing both beyond hearing from us twice. Unsubscribe from
+        emails anytime.
+      </p>
+    </div>
+
+    <script>
+      // ---------- WhatsApp link: built safely, easy to update in one place ----------
+      const WHATSAPP_NUMBER = "447482795285"; // digits only, country code, no + or leading 0
+      const WHATSAPP_MESSAGE = "Hi, I'd like to join the community";
+      document.getElementById("wa-link").href =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(WHATSAPP_MESSAGE);
+
+      // ---------- Email form: AJAX submit to Formspree, no page redirect ----------
+      const form = document.getElementById("signup-form");
+      const statusEl = document.getElementById("form-status");
+      const submitBtn = document.getElementById("submit-btn");
+      const FORM_ENDPOINT = "https://formspree.io/f/mrboelvj";
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+        statusEl.textContent = "";
+        statusEl.className = "status";
+
+        try {
+          const res = await fetch(FORM_ENDPOINT, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: new FormData(form),
+          });
+
+          if (res.ok) {
+            statusEl.textContent = "You're on the list — talk soon.";
+            statusEl.className = "status ok";
+            form.reset();
+            submitBtn.textContent = "Notify me";
+          } else {
+            throw new Error("Request failed");
+          }
+        } catch (err) {
+          statusEl.textContent =
+            "Something went wrong. Please try again in a moment.";
+          statusEl.className = "status err";
+          submitBtn.textContent = "Notify me";
+        } finally {
+          submitBtn.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>
