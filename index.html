@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A New Chapter | Early Access</title>
+    <title>A New Chapter | Free Sponsorships & Giveaways</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,16 +12,17 @@
     />
     <style>
       :root {
-        --ink: #0a0e1a;
-        --surface: #121828;
-        --surface-2: #1a2233;
-        --border: #2a3247;
-        --text: #f3f1ea;
-        --text-muted: #9aa3b8;
-        --gold: #d9b878;
-        --gold-soft: rgba(217, 184, 120, 0.14);
-        --gold-line: rgba(217, 184, 120, 0.35);
+        --ink: #070a13;
+        --surface: #0e1424;
+        --surface-2: #161e33;
+        --border: #222d47;
+        --text: #f7f6f0;
+        --text-muted: #8e9bb4;
+        --gold: #e2be7a;
+        --gold-soft: rgba(226, 190, 122, 0.12);
+        --gold-line: rgba(226, 190, 122, 0.3);
         --green: #25d366;
+        --green-soft: rgba(37, 211, 102, 0.12);
         --green-dark: #1aa651;
       }
 
@@ -33,12 +34,13 @@
 
       html {
         -webkit-font-smoothing: antialiased;
+        scroll-behavior: smooth;
       }
 
       body {
         background: radial-gradient(
             ellipse 80% 60% at 50% -10%,
-            rgba(217, 184, 120, 0.1),
+            rgba(226, 190, 122, 0.12),
             transparent 60%
           ),
           var(--ink);
@@ -48,19 +50,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 56px 20px 40px;
+        padding: 48px 16px 40px;
       }
 
       .wrap {
         width: 100%;
-        max-width: 640px;
+        max-width: 680px;
       }
 
-      /* ---------- Signature mark: seal + rotating ring ---------- */
+      /* ---------- Signature mark: rotating circular dial ---------- */
       .mark {
-        width: 76px;
-        height: 76px;
-        margin: 0 auto 28px;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 24px;
         position: relative;
         display: grid;
         place-items: center;
@@ -74,16 +76,17 @@
       }
 
       .mark .ring {
-        animation: spin 22s linear infinite;
+        animation: spin 25s linear infinite;
         transform-origin: 50% 50%;
       }
 
       .mark .core {
         font-family: "Fraunces", serif;
-        font-size: 0.95rem;
+        font-size: 1rem;
         font-weight: 600;
         color: var(--gold);
         letter-spacing: 0.04em;
+        text-shadow: 0 0 10px rgba(226, 190, 122, 0.2);
       }
 
       @keyframes spin {
@@ -92,24 +95,25 @@
         }
       }
 
+      /* ---------- Hero section typography ---------- */
       .eyebrow {
         text-align: center;
         font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 0.18em;
+        font-weight: 700;
+        letter-spacing: 0.22em;
         text-transform: uppercase;
         color: var(--gold);
-        margin-bottom: 18px;
+        margin-bottom: 16px;
       }
 
       h1 {
         font-family: "Fraunces", serif;
         font-weight: 600;
         text-align: center;
-        font-size: clamp(2.1rem, 6vw, 3.2rem);
-        line-height: 1.12;
-        letter-spacing: -0.01em;
-        margin-bottom: 18px;
+        font-size: clamp(2.1rem, 6.5vw, 3.4rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
       }
 
       h1 em {
@@ -117,36 +121,36 @@
         font-weight: 500;
         background: linear-gradient(
           100deg,
-          var(--text) 30%,
+          var(--text) 25%,
           var(--gold) 45%,
-          #f3e3bf 50%,
+          #fff3d1 50%,
           var(--gold) 55%,
-          var(--text) 70%
+          var(--text) 75%
         );
-        background-size: 250% 100%;
+        background-size: 200% 100%;
         background-position: 0% 0%;
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
-        animation: shimmer 5s ease-in-out 0.4s 1;
+        animation: shimmer 4s ease-in-out infinite;
       }
 
       @keyframes shimmer {
         0% {
-          background-position: 120% 0%;
+          background-position: 150% 0%;
         }
         100% {
-          background-position: -20% 0%;
+          background-position: -50% 0%;
         }
       }
 
       .tagline {
         text-align: center;
         color: var(--text-muted);
-        font-size: 1.02rem;
+        font-size: 1.05rem;
         line-height: 1.65;
-        max-width: 520px;
-        margin: 0 auto 44px;
+        max-width: 580px;
+        margin: 0 auto 32px;
       }
 
       .tagline strong {
@@ -154,88 +158,243 @@
         font-weight: 600;
       }
 
-      /* ---------- Path cards ---------- */
+      /* ---------- Real-time Alert & Progress Bar ---------- */
+      .live-alert-bar {
+        background: rgba(22, 30, 51, 0.6);
+        border: 1px dashed var(--gold-line);
+        border-radius: 14px;
+        padding: 16px 20px;
+        margin-bottom: 36px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      .live-alert-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
+      .live-alert-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #f87171;
+        border-radius: 50%;
+        display: inline-block;
+        animation: pulse-glow 1.5s infinite;
+      }
+
+      @keyframes pulse-glow {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.3); opacity: 0.4; }
+      }
+
+      .live-alert-counter {
+        color: var(--text);
+        font-family: "Space Mono", monospace;
+      }
+
+      .progress-container {
+        width: 100%;
+        height: 8px;
+        background: var(--ink);
+        border-radius: 100px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+
+      .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, var(--gold), #fff0cb);
+        width: 87%;
+        border-radius: 100px;
+        transition: width 1s ease-out;
+      }
+
+      /* ---------- Giveaway & Sponsor Perks Grid ---------- */
+      .perks-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 36px;
+      }
+
+      @media (max-width: 580px) {
+        .perks-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .perk-badge {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 16px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        transition: transform 0.2s, border-color 0.2s;
+      }
+
+      .perk-badge:hover {
+        transform: translateY(-2px);
+        border-color: var(--gold-line);
+      }
+
+      .perk-icon {
+        font-size: 1.5rem;
+      }
+
+      .perk-title {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text);
+      }
+
+      .perk-sub {
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        line-height: 1.3;
+      }
+
+      /* ---------- Conversion Paths ---------- */
       .paths {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 16px;
+        gap: 20px;
         margin-bottom: 28px;
       }
 
-      @media (max-width: 600px) {
+      @media (max-width: 640px) {
         .paths {
           grid-template-columns: 1fr;
+          gap: 16px;
         }
       }
 
       .card {
         background: var(--surface);
         border: 1px solid var(--border);
-        border-radius: 18px;
-        padding: 28px 24px;
+        border-radius: 20px;
+        padding: 32px 24px;
         display: flex;
         flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+
+      .card:hover {
+        border-color: var(--gold-line);
+        box-shadow: 0 12px 35px rgba(226, 190, 122, 0.05);
+      }
+
+      .card--wa:hover {
+        border-color: rgba(37, 211, 102, 0.4);
+        box-shadow: 0 12px 35px rgba(37, 211, 102, 0.05);
+      }
+
+      .card-tag {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: var(--gold-soft);
+        color: var(--gold);
+        font-size: 0.65rem;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 100px;
+        border: 1px solid var(--gold-line);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .card--wa .card-tag {
+        background: var(--green-soft);
+        color: var(--green);
+        border-color: rgba(37, 211, 102, 0.3);
       }
 
       .card-icon {
-        width: 38px;
-        height: 38px;
-        border-radius: 10px;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
         display: grid;
         place-items: center;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
       }
 
       .card-icon svg {
-        width: 19px;
-        height: 19px;
+        width: 22px;
+        height: 22px;
       }
 
       .card--email .card-icon {
         background: var(--gold-soft);
         color: var(--gold);
+        border: 1px solid var(--gold-line);
       }
 
       .card--wa .card-icon {
-        background: rgba(37, 211, 102, 0.14);
+        background: var(--green-soft);
         color: var(--green);
+        border: 1px solid rgba(37, 211, 102, 0.3);
       }
 
       .card h2 {
         font-family: "Fraunces", serif;
-        font-size: 1.18rem;
+        font-size: 1.25rem;
         font-weight: 600;
         margin-bottom: 8px;
+        line-height: 1.3;
       }
 
       .card p.desc {
-        font-size: 0.86rem;
+        font-size: 0.88rem;
         color: var(--text-muted);
-        line-height: 1.55;
-        margin-bottom: 20px;
+        line-height: 1.6;
+        margin-bottom: 24px;
         flex-grow: 1;
       }
 
       .field {
-        margin-bottom: 12px;
+        margin-bottom: 14px;
       }
 
       .field label {
         display: block;
-        font-size: 0.74rem;
-        font-weight: 600;
+        font-size: 0.72rem;
+        font-weight: 700;
         color: var(--text-muted);
         margin-bottom: 6px;
         text-transform: uppercase;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.06em;
       }
 
       .field input {
         width: 100%;
-        padding: 12px 13px;
-        background: rgba(10, 14, 26, 0.6);
+        padding: 13px 14px;
+        background: rgba(7, 10, 19, 0.7);
         border: 1px solid var(--border);
-        border-radius: 9px;
+        border-radius: 10px;
         color: var(--text);
         font-size: 0.92rem;
         font-family: inherit;
@@ -254,21 +413,21 @@
         justify-content: center;
         gap: 8px;
         width: 100%;
-        padding: 13px;
+        padding: 14px;
         border: none;
-        border-radius: 9px;
-        font-size: 0.92rem;
-        font-weight: 600;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        font-weight: 700;
         font-family: inherit;
         cursor: pointer;
         text-decoration: none;
-        transition: transform 0.15s, filter 0.15s;
-        margin-top: 4px;
+        transition: transform 0.15s, filter 0.15s, box-shadow 0.15s;
+        margin-top: 8px;
       }
 
       .btn:hover {
-        filter: brightness(1.08);
-        transform: translateY(-1px);
+        filter: brightness(1.1);
+        transform: translateY(-1.5px);
       }
 
       .btn:active {
@@ -276,32 +435,43 @@
       }
 
       .btn:disabled {
-        opacity: 0.6;
+        opacity: 0.5;
         cursor: not-allowed;
         transform: none;
       }
 
       .btn-gold {
         background: var(--gold);
-        color: #1a1305;
+        color: #100b03;
+        box-shadow: 0 4px 14px rgba(226, 190, 122, 0.25);
+      }
+
+      .btn-gold:hover {
+        box-shadow: 0 6px 18px rgba(226, 190, 122, 0.35);
       }
 
       .btn-wa {
         background: var(--green);
-        color: #06210f;
+        color: #031408;
+        box-shadow: 0 4px 14px rgba(37, 211, 102, 0.25);
+      }
+
+      .btn-wa:hover {
+        box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
       }
 
       .btn-wa svg {
-        width: 17px;
-        height: 17px;
+        width: 18px;
+        height: 18px;
         fill: currentColor;
       }
 
       .status {
         font-size: 0.8rem;
-        margin-top: 10px;
-        min-height: 1.1em;
+        margin-top: 12px;
+        min-height: 1.2em;
         text-align: center;
+        font-weight: 500;
       }
 
       .status.ok {
@@ -316,16 +486,17 @@
         display: none;
       }
 
-      @media (max-width: 600px) {
+      @media (max-width: 640px) {
         .or-divider {
           display: flex;
           align-items: center;
           gap: 12px;
           color: var(--text-muted);
           font-size: 0.72rem;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          margin: -6px 0 4px;
+          font-weight: 700;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          margin: 8px 0;
         }
         .or-divider::before,
         .or-divider::after {
@@ -338,16 +509,29 @@
 
       .footnote {
         text-align: center;
-        font-size: 0.78rem;
+        font-size: 0.8rem;
         color: var(--text-muted);
         line-height: 1.6;
-        max-width: 440px;
-        margin: 8px auto 0;
+        max-width: 480px;
+        margin: 16px auto 0;
+      }
+
+      /* ---------- Live Floating Starfield Particles ---------- */
+      #stars {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .wrap {
+        position: relative;
+        z-index: 1;
       }
 
       @media (prefers-reduced-motion: reduce) {
         .mark .ring,
-        h1 em {
+        h1 em,
+        .pulse-dot {
           animation: none;
         }
       }
@@ -355,7 +539,10 @@
   </head>
 
   <body>
+    <canvas id="stars"></canvas>
+
     <div class="wrap">
+      <!-- Animated brand seal mark -->
       <div class="mark">
         <svg class="ring" viewBox="0 0 76 76" fill="none">
           <circle
@@ -363,26 +550,62 @@
             cy="38"
             r="35"
             stroke="var(--gold-line)"
-            stroke-width="1"
-            stroke-dasharray="3 7"
+            stroke-width="1.2"
+            stroke-dasharray="4 8"
           />
         </svg>
         <svg viewBox="0 0 76 76" fill="none">
-          <circle cx="38" cy="38" r="27" stroke="var(--border)" stroke-width="1" />
+          <circle cx="38" cy="38" r="27" stroke="var(--border)" stroke-width="1.2" />
         </svg>
-        <span class="core">N°2</span>
+        <span class="core">CH. 2</span>
       </div>
 
-      <p class="eyebrow">A New Chapter</p>
-      <h1>Something <em>bigger</em><br />is on its way</h1>
+      <p class="eyebrow">The Evolution Begins</p>
+      <h1>We're Rebranding to<br /><em>Empower You Better</em></h1>
       
       <p class="tagline">
-        We're refreshing our brand from the ground up. Pick a way to hear about it first — <strong>email, WhatsApp, or both.</strong> We are also building the ultimate network to connect up-and-coming creators with premium brands, free gear, and monetization tools. Secure your spot below to apply for a sponsorship or enter our launch giveaway.
+        We are rebuilding our ecosystem from the ground up. To celebrate this new chapter, we are opening up **free sponsorships** and **premium gear giveaways** for creators and partners. Choose a path below to secure your spot, submit your details, and claim your launch opportunities.
       </p>
 
+      <!-- Live Sponsorship Allocation & Urgency Bar -->
+      <div class="live-alert-bar">
+        <div class="live-alert-header">
+          <div class="live-alert-title">
+            <span class="pulse-dot"></span>
+            <span>Launch Sponsorship Status</span>
+          </div>
+          <div class="live-alert-counter">
+            <span id="allocated-percent">87%</span> Allocated
+          </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar" id="status-bar"></div>
+        </div>
+      </div>
+
+      <!-- Perks overview grid -->
+      <div class="perks-grid">
+        <div class="perk-badge">
+          <span class="perk-icon">🎁</span>
+          <span class="perk-title">Free Gear</span>
+          <span class="perk-sub">Sponsorship gear pools & packages</span>
+        </div>
+        <div class="perk-badge">
+          <span class="perk-icon">🤝</span>
+          <span class="perk-title">Brand Matches</span>
+          <span class="perk-sub">Direct network monetization tools</span>
+        </div>
+        <div class="perk-badge">
+          <span class="perk-icon">⚡</span>
+          <span class="perk-title">Community</span>
+          <span class="perk-sub">Direct access to team channels</span>
+        </div>
+      </div>
+
       <div class="paths">
-        <!-- Email path -->
+        <!-- Email Path: Registration for Sponsorship -->
         <div class="card card--email">
+          <span class="card-tag">Giveaway Entry</span>
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path
@@ -392,9 +615,9 @@
               />
             </svg>
           </div>
-          <h2>Get the announcement by email</h2>
+          <h2>Apply for Sponsorship</h2>
           <p class="desc">
-            One message when we relaunch — no extra noise in between. Enter your details to join our creator network and launch giveaway.
+            Sumbit your profile details to join our creator network, apply for gear sponsorships, and automatically enter our relaunch giveaway.
           </p>
 
           <form id="signup-form">
@@ -404,7 +627,7 @@
                 type="text"
                 id="name-field"
                 name="name"
-                placeholder="Your name or handle"
+                placeholder="Your name, handle or brand"
                 required
               />
             </div>
@@ -414,12 +637,12 @@
                 type="email"
                 id="email-field"
                 name="email"
-                placeholder="you@example.com"
+                placeholder="you@domain.com"
                 required
               />
             </div>
             <button type="submit" class="btn btn-gold" id="submit-btn">
-              Notify me & Enter
+              Apply & Enter Giveaway
             </button>
             <p class="status" id="form-status" role="status"></p>
           </form>
@@ -427,8 +650,9 @@
 
         <div class="or-divider">or</div>
 
-        <!-- WhatsApp path -->
+        <!-- WhatsApp Path: Live Community & Instant Priority -->
         <div class="card card--wa">
+          <span class="card-tag">Live Fast-Track</span>
           <div class="card-icon">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path
@@ -436,9 +660,9 @@
               />
             </svg>
           </div>
-          <h2>Join the community chat</h2>
+          <h2>Join Community Chat</h2>
           <p class="desc">
-            Talk to the team directly, see updates as soon as they're posted, and explore sponsorship networks or gear drops.
+            Connect with our team directly, preview gear drops, collaborate on active sponsorships, and claim instant fast-track benefits.
           </p>
           <a
             href="#"
@@ -452,27 +676,80 @@
                 d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.966 0c3.178.001 6.169 1.24 8.413 3.488 2.245 2.248 3.481 5.239 3.482 8.415-.004 6.617-5.34 11.965-11.909 11.965-1.996-.001-3.963-.503-5.714-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.742.002-2.602-1.01-5.05-2.852-6.894C16.643 2.125 14.197.923 11.962.923c-5.44 0-9.866 4.373-9.87 9.746-.001 1.696.447 3.354 1.298 4.814L2.4 21.01l4.247-1.856zM17.48 15.63c-.31-.155-1.836-.906-2.119-1.01-.283-.103-.49-.155-.696.155-.205.31-.796.101-.975 1.213-.18.207-.36.24-.67.084-.31-.156-1.31-.483-2.496-1.542-.924-.824-1.547-1.842-1.728-2.152-.18-.31-.02-.477.136-.632.14-.139.31-.361.464-.543.155-.18.206-.31.31-.516.103-.207.052-.387-.026-.543-.077-.155-.696-1.677-.953-2.3-.25-.6-.505-.519-.695-.529-.18-.008-.387-.01-.593-.01-.207 0-.542.078-.826.388-.283.31-1.082 1.059-1.082 2.585 0 1.525 1.11 3 1.26 3.207.155.207 2.184 3.334 5.292 4.673.74.32 1.317.51 1.768.653.744.237 1.422.203 1.958.123.597-.089 1.836-.75 2.094-1.446.257-.696.257-1.293.18-1.419-.077-.127-.283-.207-.592-.361z"
               />
             </svg>
-            Open WhatsApp
+            Click to Join Community
           </a>
         </div>
       </div>
 
       <p class="footnote">
-        You're welcome to use either path, or both — there's no extra benefit to doing both beyond hearing from us twice. Unsubscribe from emails anytime.
+        Both paths are fully integrated. Claiming sponsorships through email and entering the live community chat provides maximum launch access. Unsubscribe easily at any time.
       </p>
     </div>
 
     <script>
-      // ---------- WhatsApp link setup ----------
+      // ---------- WhatsApp Link Customizer ----------
       const WHATSAPP_NUMBER = "447482795285"; 
-      const WHATSAPP_MESSAGE = "Hi, I'm here from the rebranding page to join the community chat and check out the network opportunities.";
+      const WHATSAPP_MESSAGE = "Hi, I am reaching out regarding the rebranded launch, the free sponsorships opportunities, and the creator network gear giveaways!";
       document.getElementById("wa-link").href =
         "https://wa.me/" +
         WHATSAPP_NUMBER +
         "?text=" +
         encodeURIComponent(WHATSAPP_MESSAGE);
 
-      // ---------- Email form setup ----------
+      // ---------- Urgency Counter Simulator ----------
+      const percentEl = document.getElementById("allocated-percent");
+      const barEl = document.getElementById("status-bar");
+      
+      let basePercent = 87.4;
+      function updateStatusBar() {
+        // Subtle drift simulation representing live spots being claimed
+        basePercent += Math.random() * 0.15;
+        if (basePercent > 96.8) {
+          basePercent = 87.4; // Soft cycle to reset visual drift safely
+        }
+        percentEl.textContent = basePercent.toFixed(1) + "%";
+        barEl.style.width = basePercent.toFixed(1) + "%";
+      }
+      
+      // Update visual counter status occasionally
+      setInterval(updateStatusBar, 9000);
+      updateStatusBar();
+
+      // ---------- Dynamic Starfield Background Canvas ----------
+      const canvas = document.getElementById("stars");
+      const ctx = canvas.getContext("2d");
+      let stars = [];
+      
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        stars = Array.from({ length: 110 }, () => ({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.4 + 0.3,
+          o: Math.random(),
+          s: Math.random() * 0.0025 + 0.0008,
+        }));
+      }
+      
+      function animateStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        stars.forEach((s) => {
+          s.o += s.s;
+          if (s.o > 1 || s.o < 0) s.s *= -1;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(226, 190, 122, ${s.o * 0.4})`;
+          ctx.fill();
+        });
+        requestAnimationFrame(animateStars);
+      }
+      
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+      animateStars();
+
+      // ---------- Email Submission Integration ----------
       const form = document.getElementById("signup-form");
       const statusEl = document.getElementById("form-status");
       const submitBtn = document.getElementById("submit-btn");
@@ -481,7 +758,7 @@
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
         submitBtn.disabled = true;
-        submitBtn.textContent = "Sending...";
+        submitBtn.textContent = "Securing Spot...";
         statusEl.textContent = "";
         statusEl.className = "status";
 
@@ -493,18 +770,18 @@
           });
 
           if (res.ok) {
-            statusEl.textContent = "You're on the list — talk soon.";
+            statusEl.textContent = "Your details are secure. Sponsorship application received!";
             statusEl.className = "status ok";
             form.reset();
-            submitBtn.textContent = "Notify me & Enter";
+            submitBtn.textContent = "Application Secured";
           } else {
-            throw new Error("Request failed");
+            throw new Error("Formspree response not ok");
           }
         } catch (err) {
           statusEl.textContent =
-            "Something went wrong. Please try again in a moment.";
+            "Temporary network issue. Please re-submit in a moment.";
           statusEl.className = "status err";
-          submitBtn.textContent = "Notify me & Enter";
+          submitBtn.textContent = "Apply & Enter Giveaway";
         } finally {
           submitBtn.disabled = false;
         }
