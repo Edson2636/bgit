@@ -806,11 +806,12 @@
       }
 
       // ---------- WhatsApp Dynamic Link Update ----------
-      const WHATSAPP_NUMBER = "447482795285"; 
+const WHATSAPP_NUMBER = "447482795285"; 
       
-      function updateWhatsAppLink(rewardValue) {
-        const baseMsg = `Hi, I'm waiting on the rebranding page. I just revealed my exclusive starting bonus: ${rewardValue}! Please reserve my slot in the waitlist & sponsorship pool.`;
-        document.getElementById("wa-link").href =
-          "https://wa.me/" +
-          WHATSAPP_NUMBER +
-          "?text="
+function updateWhatsAppLink(rewardValue) {
+  const baseMsg = `Hi, I'm waiting on the rebranding page. I just revealed my exclusive starting bonus: ${rewardValue}! Please reserve my slot in the waitlist & sponsorship pool.`;
+  document.getElementById("wa-link").href =
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" + encodeURIComponent(baseMsg);
+}
